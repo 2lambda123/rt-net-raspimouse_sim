@@ -21,7 +21,7 @@ def get_motor_freq():
     while not rospy.is_shutdown():
         try:
             with open(swfile, "r") as f:
-                motor_power_status = f.readline().rstrip()
+                motor_power_status = f.readline(5_000_000).rstrip()
             if motor_power_status == "0":
                 sound_count = 0
             if motor_power_status == "1" and sound_count == 0:
@@ -30,8 +30,8 @@ def get_motor_freq():
             if motor_power_status == "1":
                 with open(lfile, "r") as lf, \
                         open(rfile, "r") as rf:
-                    lhz_str = lf.readline().rstrip()
-                    rhz_str = rf.readline().rstrip()
+                    lhz_str = lf.readline(5_000_000).rstrip()
+                    rhz_str = rf.readline(5_000_000).rstrip()
                 if len(lhz_str) == 0:
                     lhz = 0
                 else:
