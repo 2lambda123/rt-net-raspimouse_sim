@@ -6,7 +6,6 @@
 # Released under the MIT License 
 # https://opensource.org/licenses/MIT
 
-from __future__ import print_function
 import rospy, math
 from sensor_msgs.msg import LaserScan
 
