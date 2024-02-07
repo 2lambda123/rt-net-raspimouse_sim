@@ -29,6 +29,17 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 
 def generate_launch_description():
+    """Function to generate a launch description for the raspimouse gazebo simulation.
+    Parameters:
+        - None
+    Returns:
+        - LaunchDescription: A launch description for the raspimouse gazebo simulation.
+    Processing Logic:
+        - Get the world file path.
+        - Create a launch description for the raspimouse with empty world.
+        - Set the use_sim_time parameter to True.
+        - Add the world launch to the launch description."""
+    
     world_file = os.path.join(
         get_package_share_directory('raspimouse_gazebo'),
         'worlds',

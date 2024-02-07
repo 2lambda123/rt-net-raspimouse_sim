@@ -34,6 +34,8 @@ from launch_ros.descriptions import ComposableNode
 
 
 def generate_launch_description():
+    """"""
+    
     declare_arg_lidar = DeclareLaunchArgument(
         'lidar',
         default_value='none',
